@@ -1,0 +1,13 @@
+<%- include("partials/header")  -%>
+<h1>Home</h1>
+<% for(let i=0;i<homedata.length;i++){%>
+  <h1><%=homedata[i].title%></h1>
+  <%if(homedata[i].post.length<=10){%>
+  <p><%=homedata[i].post%></p>
+  <%}else{%>
+    <p><%=homedata[i].post.substring(0,10)+"..."%>
+    <a href="/post/<%=homedata[i].title%>">Read More</a>
+    </p>
+<% }%>
+<% }%>
+<%- include("partials/footer")  -%>
